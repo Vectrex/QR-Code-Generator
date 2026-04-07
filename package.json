@@ -1,6 +1,6 @@
 {
   "name": "qr-code-generator",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,6 +11,7 @@
   "devDependencies": {
     "vite": "^8.0.4",
     "tailwindcss": "^4.2.2",
-    "@tailwindcss/vite": "^4.2.2"
+    "@tailwindcss/vite": "^4.2.2",
+    "vitest": "^4.1.3"
   }
 }
