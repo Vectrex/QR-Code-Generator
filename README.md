@@ -1,6 +1,6 @@
 # Vue QR Code
 
-A basic Vue component for rendering QR codes as SVGs. The QR code generation was heavily inspired by [this library](https://github.com/kazuhikoarase/qrcode-generator).
+A basic Vue 3 component for rendering QR codes as SVGs. The QR code generation was heavily inspired by [this library](https://github.com/kazuhikoarase/qrcode-generator).
 
 ## Features
  
