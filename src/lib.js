@@ -1,7 +1,9 @@
-import { stringToQrCodeSVG  } from './QrCodeGenerator'
 import { stringToQrMatrix } from './stringToQrMatrix'
+import { useStringToQrMatrix  } from './useStringToQrMatrix'
+import QrCode from './QrCode.vue'
 
 export {
-  stringToQrCodeSVG,
-  stringToQrMatrix
+  stringToQrMatrix,
+  useStringToQrMatrix,
+  QrCode
 }

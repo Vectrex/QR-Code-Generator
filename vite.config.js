@@ -9,6 +9,14 @@ export default defineConfig({
       name: 'qrCodeGenerator',
       fileName: format => `qrcg.${format}.js`,
     },
+    rollupOptions: {
+      external: ['vue'],
+      output: {
+        globals: {
+          vue: 'Vue',
+        },
+      },
+    },
   },
   plugins: [
     tailwindcss(),
