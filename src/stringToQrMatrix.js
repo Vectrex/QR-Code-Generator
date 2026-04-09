@@ -44,8 +44,6 @@ const defaultOptions = {
   ecl: 'M'
 }
 
-const isNumeric = text => /^[0-9]*$/.test(text)
-const isAlphanumeric = text => /^[A-Z0-9 $%*+.\/:-]*$/.test(text)
 const getBit = (x, i) => ((x >>> i) & 1) !== 0
 const appendBits = (val, len, bb) => {
   if (len < 0 || len > 31 || val >>> len !== 0) throw new RangeError("Value out of range")
@@ -118,7 +116,10 @@ const makeBytes = bytes => {
 const makeSegments = text => {
   if (!text) return []
   let bb = []
-  if (isNumeric(text)) {
+
+  // numeric
+
+  if (/^[0-9]*$/.test(text)) {
     for (let i = 0; i < text.length; ) {
       const n = Math.min(text.length - i, 3)
       appendBits(parseInt(text.substring(i, i + n), 10), n * 3 + 1, bb)
@@ -130,7 +131,10 @@ const makeSegments = text => {
       bitData: [...bb]
     }]
   }
-  if (isAlphanumeric(text)) {
+
+  // alphanumeric
+
+  if (/^[A-Z0-9 $%*+.\/:-]*$/.test(text)) {
     let i, alnumChars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:'
     for (i = 0; i + 2 <= text.length; i += 2) {
       let temp = alnumChars.indexOf(text.charAt(i)) * 45
